@@ -1,9 +1,11 @@
 "use client"
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 type Project = {
-  img: string;
+  images: string[];
   title: string;
   description: string;
   code: string;
@@ -12,58 +14,58 @@ type Project = {
 
    const projects: Project[] = [
       {
-        img: '/assets/bento-1.jpg',
+        images: ['/assets/bento-1.jpg'],
         title: 'Project One',
         description: 'A more detailed description of Project One.',
         code: 'https://github.com/hannahhendrix/project-one',
         live: 'https://project-one.demo.com'
       },
       {
-        img: '/assets/bento-2.jpg',
+        images: ['/assets/bento-2.jpg'],
         title: 'Project Two',
         description: 'Detailed description for Project Two.',
         code: 'https://github.com/hannahhendrix/project-two',
         live: 'https://project-two.demo.com'
       },
       {
-        img: '/assets/bento-3.jpg',
+        images: ['/assets/bento-3.jpg'],
         title: 'Project Three',
         description: 'Detailed description for Project Three.',
         code: 'https://github.com/hannahhendrix/project-two',
         live: 'https://project-two.demo.com'
       },
       {
-        img: '/assets/bento-4.jpg',
+        images: ['/assets/bento-4.jpg'],
         title: 'Project Four',
         description: 'Detailed description for Project Four.',
         code: 'https://github.com/hannahhendrix/project-two',
         live: 'https://project-two.demo.com'
       },
       {
-        img: '/assets/bento-5.jpg',
+        images: [
+          '/assets/bento-5.jpg',
+          '/assets/portfolio-5.jpg'],
         title: 'Portfolio Website - Personal Branding & Responsive Web Design',
-        description: `<br>This custom-built portfolio website (the one you are viewing now!) was developed from scratch using 
-        HTML5, CSS3 (with nested SCSS styling), and vanilla JavaScript. The site showcases a fully 
-        responsive, mobile-first layout and includes dynamic features such as a project modal viewer, 
-        smooth navigation, a collapsible mobile menu, and custom-styled scrollbars. I designed and 
-        implemented a modular bento-grid layout to highlight projects, each with interactive overlays 
-        and descriptive modals featuring live demo and codebase links.This project not only reflects my ability to write clean, maintainable frontend code but also
-        demonstrates my attention to detail, UX design sensibilities, and commitment to creating 
-        visually engaging and technically sound web experiences.<br><br>
-        <b>Project Highlights:</b><br>
-        <ul>
-          <li>Mobile-first design: Built using modern CSS grid and media queries to ensure <br>full responsiveness across devices.</li>
-          <li>Custom JavaScript functionality: Includes dynamic modal project loading using <br>structured data for scalability.</li>
-          <li>Accessibility and UX: Integrated keyboard-accessible navigation, ARIA labeling, and<br> intuitive layout to enhance user experience.</li>
-          <li>Code organization: Maintained clean, readable SCSS with nesting and variables <br>for theming and future maintainability.</li>
-          <li>Professional polish: Features custom branding, consistent typographic hierarchy <br>using Google Fonts, and optimized image rendering.</li>
-        </ul>
-        `.trim(),
-        code: 'https://github.com/hannahhendrix/project-two',
+        description: `<p>This custom-built portfolio website (the one you're viewing now!) was developed from scratch and later migrated to the modern <strong>Next.js</strong> framework using <strong>TypeScript</strong> and <strong>React</strong>. The current version leverages server-side rendering and dynamic routing for performance and scalability.</p>
+
+    <p>The site was version-controlled using <strong>Git</strong> and deployed through GitHub. This allowed for proper code management, rollback capabilities, and continuous iteration as new features were added.</p>
+
+    <p>The layout is fully responsive and mobile-first, incorporating features like a dynamic modal project viewer, collapsible navigation menu, and smooth user interactions. The design emphasizes accessibility, modularity, and professional presentation.</p>
+    <br>
+    <strong>Project Highlights:</strong><br><br>
+    <ul>
+      <li><strong>Next.js & React Integration:</strong> Migrated from static HTML/CSS to a modern component-based framework with routing, metadata, and layout handling.</li>
+      <li><strong>Version Control with Git:</strong> Tracked development progress with meaningful commits and pushed to a public GitHub repository for transparency and collaboration.</li>
+      <li><strong>Custom JavaScript functionality:</strong> Dynamic project modals powered by structured data and event handling.</li>
+      <li><strong>Responsive design:</strong> CSS Grid and media queries ensure optimal layout across all screen sizes.</li>
+      <li><strong>UX & Accessibility:</strong> Keyboard navigation, ARIA roles, and semantic HTML improve usability for all users.</li>
+      <li><strong>Professional styling:</strong> Consistent SCSS theming, Google Fonts, and optimized assets deliver a polished visual experience.</li>
+    </ul>`,
+        code: 'https://github.com/hannahhendrix/hannahhendrixportfolio',
         live: 'https://project-two.demo.com'
       },
       {
-        img: '/assets/bento-6.jpg',
+        images: ['/assets/bento-6.jpg'],
         title: 'Project Six',
         description: 'Detailed description for Project Six.',
         code: 'https://github.com/hannahhendrix/project-two',
@@ -76,10 +78,11 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [fullscreenImg, setFullscreenImg] = useState<string | null>(null);
 
   const toggleMobileMenu = () => {
     setMenuOpen(!menuOpen);
-  }
+  };
 
 
 
@@ -92,6 +95,14 @@ export default function Home() {
     setActiveProject(project);
     setModalOpen(true);
   };
+
+  function openFullScreen(src: string) {
+  setFullscreenImg(src);
+  };
+
+  function closeFullScreen() {
+  setFullscreenImg(null);
+  }; 
 
 
   return (
@@ -233,16 +244,23 @@ export default function Home() {
                   console.log("Clicked:", project.title);
                   handleProjectClick(project);
                 }}>
-
-                <Image 
-                  src={project.img} 
-                  alt={project.title} 
-                  width={400} 
-                  height={300} />
+                  <img
+                    src={project.images[0]} // Show the first image as a thumbnail
+                    alt={project.title}
+                    className="bento-thumb"
+                    onClick={(e) => {
+                      e.stopPropagation(); // prevent opening modal if just previewing full screen
+                      setFullscreenImg(project.images[0]);
+                    }}
+                    style={{ cursor: 'zoom-in' }}
+                  />
                 <div className="overlay"></div>
                 <div className="project-text">
                   <h3>{project.title}</h3>
-                  <p>{project.description.split("\n")[0]}</p> {/* short line */}
+                  <div
+                    className="project-preview"
+                    dangerouslySetInnerHTML={{ __html: project.description.split("\n")[0] }}
+                  ></div>
                 </div>
               </div>
             ))}
@@ -254,7 +272,20 @@ export default function Home() {
           <div className="modal" onClick={handleCloseModal}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <button className="close" onClick={handleCloseModal}>&times;</button>
-              <Image src={activeProject.img} alt={activeProject.title} width={800} height={400} />
+
+              <Carousel showThumbs={false} showStatus={false}>
+                {activeProject.images.map((src: string, i: number) => (
+                  <div key={i}>
+                    <img
+                      src={src}
+                      alt={`Slide ${i + 1}`}
+                      onClick={() => openFullScreen(src)}
+                      style={{ cursor: 'zoom-in' }}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+
               <h3>{activeProject.title}</h3>
               <div
                 style={{ textAlign: "left" }}
@@ -269,6 +300,11 @@ export default function Home() {
           </div>
         )}
 
+        {fullscreenImg && (
+          <div className="fullscreen-overlay" onClick={closeFullScreen}>
+            <img src={fullscreenImg} alt="Full screen view" className="fullscreen-img" />
+          </div>
+        )}
 
       </main>
 
