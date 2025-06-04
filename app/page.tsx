@@ -275,14 +275,14 @@ export default function Home() {
 
               <Carousel showThumbs={false} showStatus={false}>
                 {activeProject.images.map((src: string, i: number) => (
-                  <div key={i}>
-                    <img
-                      src={src}
-                      alt={`Slide ${i + 1}`}
-                      onClick={() => openFullScreen(src)}
-                      style={{ cursor: 'zoom-in' }}
-                    />
-                  </div>
+                  <figure key={i} style={{ margin: 0 }}>
+                  <img
+                    src={src}
+                    alt={`Slide ${i + 1}`}
+                    onClick={() => setFullscreenImg(src)}
+                    style={{ cursor: 'zoom-in' }}
+                  />
+                </figure>
                 ))}
               </Carousel>
 

@@ -620,3 +620,7 @@ footer {
   max-height: 90%;
   cursor: zoom-out;
 }
+
+.carousel .slide img {
+  pointer-events: auto;
+}
