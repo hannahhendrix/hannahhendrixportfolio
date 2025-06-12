@@ -154,7 +154,7 @@ export default function Home() {
               <div className="about-container">
                   <h2>Hi, I'm Hannah Hendrix</h2>
                   <p>I'm a passionate and versatile software engineer currently earning my Bachelor's in Computer Science 
-                      with a concentration in Software Engineering. My academic path has fueled my interest in 
+                      with a concentration in Software Engineering and planning for a Master's in Computer Engineering. My academic path has fueled my interest in 
                       microcontrollers and embedded systems, where I enjoy bridging the gap between low-level 
                       hardware and high-level software solutions.</p>
                   <p>With hands-on experience building wire harnesses systems for aerospace and defense 
