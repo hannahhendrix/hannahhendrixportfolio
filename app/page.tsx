@@ -215,7 +215,7 @@ export default function Home() {
                           <li><a href="https://whma.org/ipcwhma-a-620/">IPC/WHMA-A-620</a></li>
                           <li><a href="https://www.protoexpress.com/blog/ipc-j-std-001-standard-soldering-requirements/">IPC-J-STD-001</a></li>
                           <li><a href="https://shop.electronics.org/ipc-a-610">IPC/WHMA-A-610</a></li>
-                          <li><a href"https://shop.electronics.org/ipcwhma-a-620/ipcwhma-a-620-addendum/Revision-e/english">IPC/WHMA-A-620 Space Addendum</li>
+                          <li><a href="https://shop.electronics.org/ipcwhma-a-620/ipcwhma-a-620-addendum/Revision-e/english">IPC/WHMA-A-620 Space Addendum<a/></li>
                           <li><a href="https://shop.electronics.org/ipc-j-std-001/ipc-j-std-001-addendum/Revision-h/english">IPC-J-STD-001 Space Addendum</a></li>
                       </ul>
                   </div>
