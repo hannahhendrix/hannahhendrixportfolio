@@ -146,20 +146,20 @@ export default function Home() {
               <div className="hero-overlay"></div>
               <div className="hero-content">
                   <h1>CODE MEETS CIRCUIT</h1>
-                  <p>Software Engineer with a foundation in embedded systems and hands-on experience in areospace and electronics repair.</p>
+                  <p>Software Engineer with a foundation in embedded systems and hands-on experience in aerospace and electronics repair.</p>
               </div>
           </section>
 
           <section id="about-me" className="about-me">
               <div className="about-container">
                   <h2>Hi, I'm Hannah Hendrix</h2>
-                  <p>I'm a passionate and versatile software engineer currently earning my Bachelor's in Computer Science 
-                      with a concentration in Software Engineering and planning for a Master's in Computer Engineering. My academic path has fueled my interest in 
+                  <p>I'm a passionate and versatile software engineer with a Bachelor's in Computer Science 
+                      with a concentration in Software Engineering and currently pursuing a Master's. My academic path has fueled my interest in 
                       microcontrollers and embedded systems, where I enjoy bridging the gap between low-level 
                       hardware and high-level software solutions.</p>
-                  <p>With hands-on experience building wire harnesses systems for aerospace and defense 
+                  <p>With hands-on experience building wire harness systems for aerospace and defense 
                       applications, I've developed a meticulous attention to industry standards and precision
-                      under pressure. Before that, I specialized in consumer electronics repair—particularly 
+                      under pressure. Before that, I specialized in consumer electronics repair, particularly 
                       game consoles and smartphones—where I became known for expert-level soldering and 
                       circuit-level diagnostics</p>
                   <p>This combination of real-world hardware troubleshooting and deep software understanding
@@ -212,8 +212,11 @@ export default function Home() {
                   <div className="cert-category">
                       <h3>Hardware</h3>
                       <ul>
-                          <li><a href="https://whma.org/ipcwhma-a-620/">IPC/WHMA 620</a></li>
-                          <li><a href="https://www.protoexpress.com/blog/ipc-j-std-001-standard-soldering-requirements/">J-STD-001</a></li>
+                          <li><a href="https://whma.org/ipcwhma-a-620/">IPC/WHMA-A-620</a></li>
+                          <li><a href="https://www.protoexpress.com/blog/ipc-j-std-001-standard-soldering-requirements/">IPC-J-STD-001</a></li>
+                          <li><a href="https://shop.electronics.org/ipc-a-610">IPC/WHMA-A-610</a></li>
+                          <li><a href"https://shop.electronics.org/ipcwhma-a-620/ipcwhma-a-620-addendum/Revision-e/english">IPC/WHMA-A-620 Space Addendum</li>
+                          <li><a href="https://shop.electronics.org/ipc-j-std-001/ipc-j-std-001-addendum/Revision-h/english">IPC-J-STD-001 Space Addendum</a></li>
                       </ul>
                   </div>
                   <div className="cert-category">
@@ -294,7 +297,7 @@ export default function Home() {
 
               <div className="modal-links">
                 <a href={activeProject.code} target="_blank" className="button">View Code</a>
-                <a href={activeProject.live} target="_blank" className="button">Live Demo</a>
+                <a href={activeProject.live} target="_blank" className="button">View Demo</a>
               </div>
             </div>
           </div>
