@@ -14,9 +14,23 @@ type Project = {
 
    const projects: Project[] = [
       {
-        images: ['/assets/bento-1.jpg'],
+        images: ['/assets/bento-1.jpg', '/assets/bento-1-1.jpg', '/assets/bento-1-2.jpg', '/assets/bento-1-3.jpg'],
         title: 'Lanturn Library - Full-Stack MERN Application',
-        description: '<p>Lanturn Library is a cozy, book-themed full stack application for browsing, saving, and managing a personal library. Users can explore a paginated catalog of books, view detailed information, and save favorites with smooth visuals like page-turning effects and sound.</p> <p>The app uses <strong>JWT-based authentication</strong> to support login, registration, and secure access to user-specific features like favorites and book management. The <strong>React Context API</strong> handles authentication state, while book data and user actions are dynamically managed with smooth modal interactions and paginated views.</p> <p>From the responsive open-book layout to interactive modals and ambient sound design, Lanturn Library prioritizes both form and function. Books can be searched by title or author, added to a favorites list, or managed directly through authenticated actions.</p><br><strong>Project Highlights:</strong><br><br><ul><li><strong>Full Stack Implementation:</strong> Built from the ground up using <strong>React</strong>, <strong>Node.js</strong>, <strong>Express</strong>, and <strong>MongoDB</strong>, with secure authentication and RESTful routing.</li><li><strong>JWT-Based User Authentication:</strong> Register and login flow securely managed through JSON Web Tokens, with role-based access to protected routes and actions.</li><li><strong>Dynamic Book Modals:</strong> Clickable book cards open responsive modals with full book details and action buttons (Add/Remove Favorite, Delete, etc.).</li><li><strong>Paginated Catalog:</strong> Styled like pages in an open book, the paginated catalog offers smooth transitions and interactive navigation.</li><li><strong>Favorites System:</strong> Users can save and manage a personal favorites list that syncs in real-time with the backend.</li><li><strong>Search Functionality:</strong> Real-time search by title or author with results displayed in the same grid-based layout as the catalog.</li><li><strong>Immersive UI & UX:</strong> Page-turning sound effects, layered visual design, and ambient elements create a warm and engaging library atmosphere.</li><li><strong>Book Management:</strong> Authenticated users can add new books via a dedicated form or delete existing entries with confirmation.</li></ul>',
+        description: `<p>Lanturn Library is a cozy, book-themed full stack application for browsing, saving, and managing a personal library. Users can explore a paginated catalog of books, view detailed information, and save favorites with smooth visuals like page-turning effects and sound.</p> 
+<p>The app uses <strong>JWT-based authentication</strong> to support login, registration, and secure access to user-specific features like favorites and book management. The <strong>React Context API</strong> handles authentication state, while book data and user actions are dynamically managed with smooth modal interactions and paginated views.</p> 
+<p>From the responsive open-book layout to interactive modals and ambient sound design, Lanturn Library prioritizes both form and function. Books can be searched by title or author, added to a favorites list, or managed directly through authenticated actions.</p>
+<br>
+<strong>Project Highlights:</strong><br>
+<br><ul>
+<li><strong>Full Stack Implementation:</strong> Built from the ground up using <strong>React</strong>, <strong>Node.js</strong>, <strong>Express</strong>, and <strong>MongoDB</strong>, with secure authentication and RESTful routing.</li>
+<li><strong>JWT-Based User Authentication:</strong> Register and login flow securely managed through JSON Web Tokens, with role-based access to protected routes and actions.</li>
+<li><strong>Dynamic Book Modals:</strong> Clickable book cards open responsive modals with full book details and action buttons (Add/Remove Favorite, Delete, etc.).</li>
+<li><strong>Paginated Catalog:</strong> Styled like pages in an open book, the paginated catalog offers smooth transitions and interactive navigation.</li>
+<li><strong>Favorites System:</strong> Users can save and manage a personal favorites list that syncs in real-time with the backend.</li>
+<li><strong>Search Functionality:</strong> Real-time search by title or author with results displayed in the same grid-based layout as the catalog.</li>
+<li><strong>Immersive UI & UX:</strong> Page-turning sound effects, layered visual design, and ambient elements create a warm and engaging library atmosphere.</li>
+<li><strong>Book Management:</strong> Authenticated users can add new books via a dedicated form or delete existing entries with confirmation.</li>
+</ul>`,
         code: 'https://github.com/hannahhendrix/lanturn-library',
         live: 'https://youtu.be/Q2-OuPAovUA'
       },
